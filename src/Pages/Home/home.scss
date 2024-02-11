@@ -1,0 +1,19 @@
+.home{
+    display: flex;
+    .homeContainer{
+        flex:6;
+        background-color: whitesmoke;
+        color: #616161;
+
+        .cards{
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            
+        }
+        .charts{
+            display: flex;
+            padding: 5px 20px;
+        }
+    }
+}   

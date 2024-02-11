@@ -1,0 +1,60 @@
+.slidebar{
+    flex:1.3;
+    background-color: whitesmoke;
+    min-height: 100vh;
+    border-right: 0.5px solid lightgray;
+
+    .top{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+
+        .logo{
+            font-size: 20px;
+            color: #210876;
+            font-weight: bold;
+
+        }
+    }
+    .bottom{
+        padding-left: 10px;
+        ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            .title{
+                font-weight: bold;
+                font-size: 14px;
+                color: #616161;
+                margin-top: 15px;
+                margin-bottom: 5px;
+            }
+
+            li{
+                display: flex;
+                align-items: center;
+                padding: 5px;
+                cursor: pointer;
+
+                &:hover{
+                    background-color: #b3a4fe;
+                }
+
+                .icon{
+                    font-size: 22px;
+                    color: #210876;
+                }
+
+                span{
+                    font-size: 13px;
+                    font-weight: 700;
+                    color: #616161;
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+}
+
