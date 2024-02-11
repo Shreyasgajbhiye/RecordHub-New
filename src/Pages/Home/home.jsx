@@ -8,6 +8,7 @@ import Chart from '../../components/chart/chart'
 function Home() {
   return (
     <div className='home'>
+      <>
       <Slidebar/>
       <div className='homeContainer'>
         <Navbar/>
@@ -19,9 +20,10 @@ function Home() {
         </div>
         <div className="charts">
             <Featured/>
-            <Chart/>
+            <Chart title={"Average Achievement"} aspects={2/1}/>
         </div>
       </div>
+      </>
     </div>
   )
 }

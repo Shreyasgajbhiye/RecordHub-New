@@ -11,7 +11,7 @@ function Navbar() {
       <div className='navBarContainer'>
         <div className='search'>
           <input type='text' placeholder='Search'/>
-          <SearchOutlinedIcon/>
+          <SearchOutlinedIcon />
         </div>
         <div className='items'>
           <div className='item'>

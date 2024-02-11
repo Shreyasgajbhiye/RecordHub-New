@@ -8,10 +8,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 50px;
+        height: 60px;
 
         .logo{
-            font-size: 20px;
+            font-size: 24px;
             color: #210876;
             font-weight: bold;
 
@@ -26,7 +26,7 @@
 
             .title{
                 font-weight: bold;
-                font-size: 14px;
+                font-size: 16px;
                 color: #616161;
                 margin-top: 15px;
                 margin-bottom: 5px;
@@ -35,20 +35,21 @@
             li{
                 display: flex;
                 align-items: center;
-                padding: 5px;
+                padding: 10px;
                 cursor: pointer;
+                
 
                 &:hover{
                     background-color: #b3a4fe;
                 }
 
                 .icon{
-                    font-size: 22px;
+                    font-size: 26px;
                     color: #210876;
                 }
 
                 span{
-                    font-size: 13px;
+                    font-size: 15px;
                     font-weight: 700;
                     color: #616161;
                     margin-left: 10px;

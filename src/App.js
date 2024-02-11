@@ -6,6 +6,7 @@ import Product from "./Pages/Product/product";
 import Single from "./Pages/Single/single";
 import Login from "./Pages/Login/login"
 import Register from "./Pages/Register/register"
+import Achievement from "./Pages/Achievements/achievements";
 const router = createBrowserRouter([
   {
     path:'/',
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
     element:<New/>
   },
   {
-    path:'/customer/:id',
+    path:'/student/:id',
     element:<Single/>
   },
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
   {
     path:'/register',
     element:<Register/>
+  },
+  {
+    path:'/achievementsAll',
+    element:<Achievement/>
   },
 ])
 function App() {

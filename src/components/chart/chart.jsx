@@ -30,11 +30,11 @@ const data = [
  
  
 ];
-function Chart() {
+function Chart({title,aspects}) {
   return (
     <div className='chart'>
-        <div className="title">Average Achievement</div>
-        <ResponsiveContainer width="100%" height="100%" aspect={2/1}>
+        <div className="title">{title}</div>
+        <ResponsiveContainer width="100%" height="100%" aspect={aspects}>
         <BarChart width={730} height={250} data={data}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
