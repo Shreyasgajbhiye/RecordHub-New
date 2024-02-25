@@ -6,7 +6,20 @@
 
     .achievementsContainer{
         flex: 6;
+
+        .Columns{
+            width: 100%;
+            padding: 10px 10px;
+            display: flex;
+            flex-direction: column;
+    
+        }   
+        .card{
+            height: 80px;
+            margin: 8px;
+        }
     }
+
 
     
 }

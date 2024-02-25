@@ -1,6 +1,6 @@
 import React from 'react'
 import './achievements.scss'
-import Slidebar from '../../components/Slidebar/slidebar'
+import Slidebar from '../../components/Slidebar/Slidebar2'
 import Navbar from '../../components/Navbar/navbar'
 function Achievement() {
   return (
@@ -8,6 +8,123 @@ function Achievement() {
       <Slidebar/>
       <div className="achievementsContainer">
         <Navbar/>
+        <div className="Columns">
+            <div className="card">
+              card
+            </div>
+            <div className="card">
+              card
+            </div>
+            <div className="card">
+              card
+            </div>
+            <div className="card">
+              card
+            </div>
+            <div className="card">
+              card
+            </div>
+            <div className="card">
+              card
+            </div>
+            <div className="card">
+              card
+            </div>
+            <div className="card">
+              card
+            </div>
+            <div className="card">
+              card
+            </div>
+            <div className="card">
+              card
+            </div>
+            <div className="card">
+              card
+            </div>
+            <div className="card">
+              card
+            </div>
+            <div className="card">
+              card
+            </div>
+            <div className="card">
+              card
+            </div>
+            <div className="card">
+              card
+            </div>
+            <div className="card">
+              card
+            </div>
+            <div className="card">
+              card
+            </div>
+            <div className="card">
+              card
+            </div>
+            <div className="card">
+              card
+            </div>
+            <div className="card">
+              card
+            </div>
+            <div className="card">
+              card
+            </div>
+            <div className="card">
+              card
+            </div>
+            <div className="card">
+              card
+            </div>
+            <div className="card">
+              card
+            </div>
+            <div className="card">
+              card
+            </div>
+            <div className="card">
+              card
+            </div>
+            <div className="card">
+              card
+            </div>
+            <div className="card">
+              card
+            </div>
+            <div className="card">
+              card
+            </div>
+            <div className="card">
+              card
+            </div>
+            <div className="card">
+              card
+            </div>
+            <div className="card">
+              card
+            </div>
+            <div className="card">
+              card
+            </div>
+            <div className="card">
+              card
+            </div>
+            <div className="card">
+              card
+            </div>
+            <div className="card">
+              card
+            </div>
+            <div className="card">
+              card
+            </div>
+            <div className="card">
+              card
+            </div>
+            y
+        </div>
       </div>
     </div>
   )

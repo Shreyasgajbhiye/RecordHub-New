@@ -9,7 +9,7 @@ function Datatable() {
     {
       field:"action",
       headerName:"Action",
-      width:200,
+      width:400,
       renderCell: (params) =>{
         return (
           <div className="cellAction">

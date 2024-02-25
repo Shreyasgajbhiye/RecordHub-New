@@ -1,13 +1,22 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './slidebar.scss'
 import SpaceDashboardIcon from '@mui/icons-material/SpaceDashboard';
 import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
 import GroupOutlinedIcon from '@mui/icons-material/GroupOutlined';
 import NotificationAddOutlinedIcon from '@mui/icons-material/NotificationAddOutlined';
 import LoginOutlinedIcon from '@mui/icons-material/LoginOutlined';
+import MenuIcon from '@mui/icons-material/Menu';
 function Slidebar() {
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
   return (
-    <div className='slidebar'>
+    <div className={`slidebar ${sidebarOpen ? 'active' : 'inactive'}`}>
+      <div className='' onClick={toggleSidebar} >
+          <MenuIcon className='menu'/>
+      </div>
       <div className='top'>
         <span className='logo'>RecordHub</span>
       </div>

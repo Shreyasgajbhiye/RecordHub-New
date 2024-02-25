@@ -1,6 +1,6 @@
 import React from 'react'
 import "./home.scss"
-import Slidebar from '../../components/Slidebar/slidebar'
+import Slidebar from '../../components/Slidebar/Slidebar2'
 import Navbar from '../../components/Navbar/navbar'
 import Card from '../../components/Cards/card'
 import Featured from '../../components/featured/featured'
@@ -19,8 +19,8 @@ function Home() {
             <Card type="Waiting"/>
         </div>
         <div className="charts">
-            <Featured/>
-            <Chart title={"Average Achievement"} aspects={2/1}/>
+            <Featured aspects={2/1}/>
+            <Chart title={"Average Achievement"} aspects={3/1.3}/>
         </div>
       </div>
       </>

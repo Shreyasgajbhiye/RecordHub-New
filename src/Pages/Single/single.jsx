@@ -1,6 +1,6 @@
 import React from 'react'
 import './single.scss'
-import Slidebar from '../../components/Slidebar/slidebar'
+import Slidebar from '../../components/Slidebar/Slidebar2'
 import Navbar from '../../components/Navbar/navbar'
 import Card from '../../components/Cards/card'
 import Featured from '../../components/featured/featured'

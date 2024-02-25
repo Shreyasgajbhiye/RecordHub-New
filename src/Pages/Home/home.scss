@@ -1,19 +1,54 @@
-.home{
+.home {
     display: flex;
-    .homeContainer{
-        flex:6;
-        background-color: whitesmoke;
-        color: #616161;
+}
 
-        .cards{
-            display: flex;
-            gap: 20px;
-            padding: 20px;
-            
-        }
-        .charts{
-            display: flex;
-            padding: 5px 20px;
-        }
+
+
+.homeContainer {
+    flex: 6;
+    background-color: whitesmoke;
+    color: #616161;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.charts {
+    display: flex;
+    padding: 5px 20px;
+}
+
+
+/* For Mobile */
+@media only screen and (max-width: 600px) {
+    .cards,
+    .charts
+    {
+        flex-wrap: wrap;
     }
-}   
+    .home {
+        flex-direction: column;
+        
+    }
+
+    .homeContainer {
+        flex: initial; 
+    }
+}
+
+/* For Tablet */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    .cards,
+    .charts {
+        flex-wrap: wrap;
+    }
+
+    .cards,
+    .charts {
+        padding: 10px; 
+    }
+}
+

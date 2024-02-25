@@ -15,14 +15,14 @@ function Featured() {
         <div className="bottom">
         <div className="featuredChart">
           <ChangingProgressProvider
-            values={[0]}
+            values={[10]}
           >
             {(percentage) => (
               <CircularProgressbar
                 value={percentage}
                 text={`${percentage}%`}
                 styles={buildStyles({
-                  pathTransitionDuration: 10000,
+                  pathTransitionDuration:  10 ,
                   trailColor: "#82ca9d",
                   pathColor: "#210876",
                   textColor: "#210876",

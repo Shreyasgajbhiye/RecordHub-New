@@ -1,0 +1,35 @@
+.Navbar{
+    display: flex;
+    background-color:whitesmoke;
+    padding: 10px;
+    position: relative;
+    margin: 0;
+    border-right: 2px solid lightgray;
+    font-family: sans-serif;
+}
+.top{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 54px;
+}
+.top .logo{
+    font-size: 24px;
+    color: #210876;
+    font-weight: bold;
+}
+.bottom{
+    padding-left: 10px;
+}
+.bottom .title{
+    font-weight: bold;
+    font-size: 16px;
+    color: #616161;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.bottom .name{
+    font-size: 90px;
+    font-weight: bold;
+}
