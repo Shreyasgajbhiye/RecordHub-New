@@ -1,0 +1,16 @@
+.home{
+    display: flex;   
+}
+
+.studentHomeContainer{
+    flex: 6;
+    background-color: whitesmoke;
+    color: #616161;
+}
+
+
+.cards {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}

@@ -80,9 +80,9 @@ const Slidebar = () => {
                 <ListItem disablePadding>
                     <ListItemButton>
                         <ListItemIcon>
-                            <LoginOutlinedIcon />
+                            <LoginOutlinedIcon sx={{color:"crimson"}} />
                         </ListItemIcon>
-                        <ListItemText primary={"Logout"} className='name' />
+                        <ListItemText primary={"Logout"} className='nameLogout' />
                     </ListItemButton>
                 </ListItem>
             </List>

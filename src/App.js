@@ -7,6 +7,8 @@ import Single from "./Pages/Single/single";
 import Login from "./Pages/Login/login"
 import Register from "./Pages/Register/register"
 import Achievement from "./Pages/Achievements/achievements";
+import StudentHome from "./student/homepage/home";
+import AchievementForm from "./student/AchievementForm/achievementForm";
 const router = createBrowserRouter([
   {
     path:'/',
@@ -48,6 +50,15 @@ const router = createBrowserRouter([
     path:'/achievementsAll',
     element:<Achievement/>
   },
+  {
+    path:'/studentHome',
+    element:<StudentHome/>
+  },
+  {
+    path:'/achievement_form',
+    element:<AchievementForm/>
+  },
+
 ])
 function App() {
   return (

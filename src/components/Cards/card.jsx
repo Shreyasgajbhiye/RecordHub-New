@@ -2,7 +2,8 @@ import React from 'react'
 import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import ListOutlinedIcon from '@mui/icons-material/ListOutlined';
-
+import GroupsOutlinedIcon from '@mui/icons-material/GroupsOutlined';
+import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
 import './card.scss'
 const Card = ({type})=> {
   let data;
@@ -46,6 +47,25 @@ const Card = ({type})=> {
         icon:<ListOutlinedIcon className='icon' 
         style={{color:"crimson", backgroundColor:"#ff000033"}}/>,
         count:"50"
+      }
+      break
+    case "Batch":
+      data={
+        title:"Batch",
+        isMoney:false,
+        link:"See details",
+        icon:<GroupsOutlinedIcon className='icon' 
+        style={{color:"crimson", backgroundColor:"#ff000033"}}/>,
+        count:"25"
+      }
+      break
+    case "Bonafide":
+      data={
+        title:"Apply for Bonafide",
+        isMoney:false,
+        link:"See details",
+        icon:<DescriptionOutlinedIcon className='icon' 
+        style={{color:"crimson", backgroundColor:"#ff000033"}}/>,
       }
       break
     default:
