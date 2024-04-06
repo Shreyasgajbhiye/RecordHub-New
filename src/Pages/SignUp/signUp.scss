@@ -1,0 +1,274 @@
+.login{
+    display: flex;
+    height: 725px; 
+    padding: 80px;
+    background-color: whitesmoke;
+    .loginContainer{
+            display: flex;
+            flex: 1; 
+            width: 50%;
+        .left{
+            flex: 1;
+            padding: 3px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .img{
+                display: flex;
+                align-items: center;
+                justify-self: center;
+                width: 500px;
+                height: 500px;
+            }
+          }
+        .right{
+            padding: 3px;
+            background-color: whitesmoke;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .container{
+                width: 400px;
+                border-radius: 20px;
+                -webkit-box-shadow: 2px 4px 10px 1px rgba(0,0,0,0.47);
+                box-shadow:2px 4px 10px 1px rgba(0,0,0,0.47);
+            }
+            .text{
+                font-size: 30px;
+                font-weight: 600;
+                color: #210876;
+                margin-left: 45px;
+                margin-top: 25px;
+            }
+
+            .underline{
+                width: 100px;
+                height: 4px;
+                background-color: #210876;
+                border-radius: 9px;
+                margin-left: 45px;
+            }
+
+            .inputs{
+                margin-top: 50px;
+                display: flex;
+                flex-direction: column;
+                gap: 25px;
+
+            }
+
+            .input{
+                display: flex;
+                align-items: center;
+                margin: auto;
+                width: 300px;
+                height: 40px;
+                background: #eaeaea;
+                border-radius: 6px;
+
+                .imgIcon{
+                    margin: 2px 18px;                    
+                }
+
+                .field{
+                    height: 40px;
+                    width: 400px;
+                    background-color: transparent;
+                    border: none;
+                    outline: none;
+                    color: #797979;
+                    font-size: 16px;
+                }
+            }
+
+            .forgot-pass{
+                //padding-left: 62px;
+                //margin: 27px;
+                margin-top: 30px;
+                color: #797979;
+                font-size: 16px;
+                margin-left: 50px;
+
+                .span{
+                    color: #210876;
+                    cursor: pointer;
+                    font-weight: 500;
+                }
+            }
+            .submitContainer{
+                display: flex;
+                margin: 40px auto;
+                .submit{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 150px;
+                    height: 36px;
+                    color: white;
+                    background: #210876;
+                    border-radius: 50px;
+                    font-size: 20px;
+                    font-weight: 300;
+                    cursor: pointer;
+                    margin-left: 32px;
+                }
+            }
+
+            .register{
+                margin-top: 20px;
+                margin-left: 55px;
+                margin-bottom: 40px;
+
+                .register-text{
+                    cursor: pointer;
+                    font-weight: 500;
+                    color: #210876  ;
+                }
+            }
+          }
+    }
+  }
+
+
+  @media only screen and (max-width: 768px) {
+    .login{
+        display: flex;
+        height: 725px; 
+        padding: 80px;
+        background-color: whitesmoke;
+        .loginContainer{
+                display: flex;
+                width: 50%;
+            .left{
+                flex: 1;
+                padding: 3px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .img{
+                    display: flex;
+                    align-items: center;
+                    justify-self: center;
+                    width: 500px;
+                    height: 500px;
+                }
+              }
+            .right{
+                padding: 3px;
+                background-color: whitesmoke;
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+    
+                .container{
+                    width: 400px;
+                    border-radius: 20px;
+                    -webkit-box-shadow: 2px 4px 10px 1px rgba(0,0,0,0.47);
+                    box-shadow:2px 4px 10px 1px rgba(0,0,0,0.47);
+                }
+                .text{
+                    font-size: 30px;
+                    font-weight: 600;
+                    color: #210876;
+                    margin-left: 45px;
+                    margin-top: 25px;
+                }
+                
+                .underline{
+                    width: 100px;
+                    height: 4px;
+                    background-color: #210876;
+                    border-radius: 9px;
+                    margin-left: 45px;
+                }
+    
+                .inputs{
+                    margin-top: 50px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 25px;
+    
+                }
+    
+                .input{
+                    display: flex;
+                    align-items: center;
+                    margin: auto;
+                    width: 300px;
+                    height: 40px;
+                    background: #eaeaea;
+                    border-radius: 6px;
+    
+                    .imgIcon{
+                        margin: 2px 18px;                    
+                    }
+    
+                    .field{
+                        height: 40px;
+                        width: 400px;
+                        background-color: transparent;
+                        border: none;
+                        outline: none;
+                        color: #797979;
+                        font-size: 16px;
+                    }
+                }
+                .inputFlex{
+                    display: flex;
+                    justify-content: center;
+                    flex: 2;
+                    border: 1px solid black;
+                }
+                .forgot-pass{
+                    //padding-left: 62px;
+                    //margin: 27px;
+                    margin-top: 30px;
+                    color: #797979;
+                    font-size: 16px;
+                    margin-left: 50px;
+    
+                    .span{
+                        color: #210876;
+                        cursor: pointer;
+                        font-weight: 500;
+                    }
+                }
+                .submitContainer{
+                    
+                    display: flex;
+                    justify-items: center;
+                    margin: 40px auto;
+                    .submit{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 150px;
+                        height: 36px;
+                        color: white;
+                        background: #210876;
+                        border-radius: 50px;
+                        font-size: 20px;
+                        font-weight: 300;
+                        cursor: pointer;
+                        margin-left: 32px;
+                    }
+                }
+    
+                .register{
+                    margin-top: 20px;
+                    margin-left: 55px;
+                    margin-bottom: 40px;
+    
+                    .register-text{
+                        cursor: pointer;
+                        font-weight: 500;
+                        color: #210876  ;
+                    }
+                }
+              }
+        }
+      }
+    }
