@@ -28,10 +28,14 @@ function Login() {
     await axios.post("http://localhost:8000/api/login", credential)
     .then((response)=>{
         console.log(response);
-         toast.success("Login Successfull", {position:"top-right"})   //in "inspect" of brower , the response is in data->msg
+         toast.success("Login Successfull", {position:"top-right"}) 
+         localStorage.setItem("token",response.data.token)
+         console.log(localStorage.getItem("token"))
+         //in "inspect" of brower , the response is in data->msg
         navigate("/home")    // navigate to home, it is a hook in [react-router-dom]
     }).catch(error => console.log(error))
 }
+
 
 const submitFormStudent  = async(e)=>{
   e.preventDefault();
@@ -65,6 +69,7 @@ const submitFormStudent  = async(e)=>{
           <div className="submitContainer">
             <div className="submit" onClick={submitFormStudent}>Student</div>
             <div className="submit"  onClick={submitForm}>Mentor</div>
+            <div className="submit" >Admin</div>
           </div>
           <div className="register">
             Don't have account? <span className='register-text'>Register now!</span>

@@ -11,6 +11,8 @@ import SignUp from "./Pages/SignUp/SignUp";
 import Request from './Pages/Request/Request.jsx'
 import Data from "./student/SubmittedData/Data.jsx";
 import Bonafide from "./student/ApplyForBonafide/Bonafide.jsx";
+import Admin from './Pages/Admin/getMentor/User.jsx'
+import Unauth_access from "./unauth_access/unauth_access.jsx";
 const router = createBrowserRouter([
   {
     path:'/',
@@ -36,10 +38,7 @@ const router = createBrowserRouter([
     path:'/student/:id',
     element:<Single/>
   },
-  {
-    path:'/product/:id',
-    element:<Single/>
-  },
+  
   {
     path:'/home',
     element:<Home/>
@@ -67,6 +66,14 @@ const router = createBrowserRouter([
   {
     path:'/applyBonafie/:id',
     element:<Bonafide/>
+  },
+  {
+    path:'/admin',
+    element:<Admin/>
+  },
+  {
+    path:'/unauth',
+    element:<Unauth_access/>
   },
 ])
 function App() {
