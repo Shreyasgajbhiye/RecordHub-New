@@ -58,6 +58,39 @@ const Card = ({type})=> {
         path: "/students"
       }
       break
+    case "Add mentor":
+      data={
+        title:"Add mentor",
+        isMoney:false,
+        link:"See details",
+        icon:<ListOutlinedIcon className='icon' 
+        style={{color:"crimson", backgroundColor:"#ff000033"}}/>,
+        count:"50",
+        path: "/students"
+      }
+      break
+    case "Get all mentor":
+      data={
+        title:"Get all mentor",
+        isMoney:false,
+        link:"See details",
+        icon:<ListOutlinedIcon className='icon' 
+        style={{color:"crimson", backgroundColor:"#ff000033"}}/>,
+        count:"50",
+        path: "/students"
+      }
+      break
+    case "Add new batch":
+      data={
+        title:"Add new batch",
+        isMoney:false,
+        link:"See details",
+        icon:<ListOutlinedIcon className='icon' 
+        style={{color:"crimson", backgroundColor:"#ff000033"}}/>,
+        count:"50",
+        path: "/students"
+      }
+      break
     case "Batch":
       data={
         title:"Batch",

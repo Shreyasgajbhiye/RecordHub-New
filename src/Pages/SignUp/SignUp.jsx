@@ -6,10 +6,13 @@ import axios from 'axios';
 function SignUp() {
 
   const credentials = {
-    name:"",
+    fname:"",
+    mname:"",
+    lname:"",
     email:"",
     password:"",
-    year:"2"
+    year:"",
+    batch:""
   }
 
   const navigate = useNavigate();
@@ -25,7 +28,7 @@ function SignUp() {
   const submitForm = async  (e) =>{
     e.preventDefault();
     //axios is use to communicate with api
-    await axios.post("http://localhost:8000/api/signup", credential)
+    await axios.post("http://localhost:8000/api/Student/signup", credential)
     .then((response)=>{
         console.log(response);
         // toast.success(response.data.msg, {position:"top-right"})   //in "inspect" of brower , the response is in data->msg
