@@ -13,6 +13,10 @@ import Data from "./student/SubmittedData/Data.jsx";
 import Bonafide from "./student/ApplyForBonafide/Bonafide.jsx";
 import Admin from './Pages/Admin/getMentor/User.jsx'
 import Unauth_access from "./unauth_access/unauth_access.jsx";
+import Register from "./student/register-student.jsx/register.jsx";
+import HomePage from "./admin/homepage/home.jsx";
+import GetMentor from "./admin/get_all_mentor/get_mentor.jsx";
+import AddMentor from "./admin/add_mentor/add_mentor.jsx";
 const router = createBrowserRouter([
   {
     path:'/',
@@ -40,8 +44,21 @@ const router = createBrowserRouter([
   },
   
   {
+    path:'/admin',
+    element:<HomePage/>
+  },
+  
+  {
     path:'/home',
     element:<Home/>
+  },
+  {
+    path:'/register',
+    element:<Register/>
+  },
+  {
+    path:'/getAllMentor',
+    element: <GetMentor/>
   },
   {
     path:'/register',
@@ -74,6 +91,10 @@ const router = createBrowserRouter([
   {
     path:'/unauth',
     element:<Unauth_access/>
+  },
+  {
+    path:'/addMentor',
+    element:<AddMentor/>
   },
 ])
 function App() {

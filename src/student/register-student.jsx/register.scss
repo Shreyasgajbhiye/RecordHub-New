@@ -1,7 +1,7 @@
 .login{
     display: flex;
     height: 725px; 
-    padding: 80px;
+    padding: 30px;
     background-color: whitesmoke;
     .loginContainer{
             display: flex;
@@ -36,15 +36,15 @@
                 box-shadow:2px 4px 10px 1px rgba(0,0,0,0.47);
             }
             .text{
-                font-size: 30px;
+                font-size: 20px;
                 font-weight: 600;
                 color: #210876;
                 margin-left: 45px;
-                margin-top: 25px;
+                margin-top: 10px;
             }
 
             .underline{
-                width: 50px;
+                width: 230px;
                 height: 4px;
                 background-color: #210876;
                 border-radius: 9px;
@@ -52,7 +52,7 @@
             }
 
             .inputs{
-                margin-top: 50px;
+                margin-top: 30px;
                 display: flex;
                 flex-direction: column;
                 gap: 25px;
@@ -99,14 +99,15 @@
             }
             .submitContainer{
                 display: flex;
-                margin: 40px auto;
+                justify-content: right;
+                align-items: right;
                 .submit{
                     gap:0;
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    width: 190px;
-                    height: 36px;
+                    width: 150px;
+                    height: 30px;
                     color: white;
                     background: #210876;
                     border-radius: 50px;
@@ -114,13 +115,14 @@
                     font-weight: 500;
                     cursor: pointer;
                     // margin-left: 32px;
-                    margin:6px;
+                    margin:15px;
                 }
             }
 
             .register{
                 margin-top: 0px;
-                margin-left: 40px;
+                margin-left: 25px;
+                margin-right: 10px;
                 margin-bottom: 30px;
 
                 .register-text{

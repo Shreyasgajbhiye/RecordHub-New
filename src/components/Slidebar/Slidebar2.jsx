@@ -11,12 +11,23 @@ import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import './Slidebar.css'
 
-
 import SpaceDashboardIcon from '@mui/icons-material/SpaceDashboard';
 import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
 import GroupOutlinedIcon from '@mui/icons-material/GroupOutlined';
 import LoginOutlinedIcon from '@mui/icons-material/LoginOutlined';
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import toast from 'react-hot-toast';
+
 const Slidebar = () => {
+    const navigate = useNavigate();
+
+    const logout = () => {
+        // Remove token from localStorage
+        localStorage.removeItem("token");
+        toast.success("Logged out successfully!", { position: "top-right" });
+        navigate("/");
+    };
 
     const [state, setState] = React.useState({
         top: false,
@@ -78,7 +89,7 @@ const Slidebar = () => {
                 <p className='title'>Logout</p>
             <List disablePadding>
                 <ListItem disablePadding>
-                    <ListItemButton>
+                    <ListItemButton onClick={logout}>
                         <ListItemIcon>
                             <LoginOutlinedIcon sx={{color:"crimson"}} />
                         </ListItemIcon>
@@ -111,4 +122,4 @@ const Slidebar = () => {
     )
 }
 
-export default Slidebar
+export default Slidebar;

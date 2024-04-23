@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react'
 import Slidebar from '../../components/Slidebar/Slidebar2'
-import './single.scss'
+import './homepage.scss'
 import Navbar from '../../components/Navbar/navbar'
 import Card from '../../components/Cards/card'
 import { useNavigate } from 'react-router-dom'
+import GetMentor from '../get_all_mentor/get_mentor'
 
-function Single() {
+function HomePage() {
   const navigate = useNavigate();
   useEffect(() => {
     let token = localStorage.getItem("token");
@@ -22,15 +23,16 @@ function Single() {
       <Slidebar/>
       <div className='homeContainer'>
         <Navbar/>
-        <div className='cards'> 
-            <Card type="Post"/>
-            <Card type="Get"/>
-            <Card type="Apply-Bonafide"/>
-        </div>  
+        {/* <div className='cards'> 
+            <Card type="Add mentor"/>
+            <Card type="Get all mentor"/>
+            <Card type="Add new batch"/>
+        </div> */}
+        <GetMentor/>  
       </div>
       </>
     </div>
   )
 }
 
-export default Single
+export default HomePage
