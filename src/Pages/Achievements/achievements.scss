@@ -1,25 +1,37 @@
-.achievemets{
+.achievemets {
     display: flex;
     width: 100%;
     background-color: whitesmoke;
     color: #616161;
-
-    .achievementsContainer{
-        flex: 6;
-
-        .Columns{
-            width: 100%;
-            padding: 10px 10px;
+  
+    .achievementsContainer {
+      flex: 6;
+  
+      .container{
+        .radioContainer{
+            padding-bottom: 20px;
             display: flex;
-            flex-direction: column;
-    
-        }   
-        .card{
-            height: 80px;
-            margin: 8px;
+            
+            .cont{
+                width:120px
+            }
         }
+        .flex{
+            display: flex;
+        }
+        .card{
+            height: 130px;
+            display: flex;
+            cursor: pointer;
+            .head{
+                font-size: large;
+                font-weight: 600;
+                display: flex;
+                justify-content: center;
+                
+            }
+        }
+      }
     }
-
-
-    
-}
+  }
+  
