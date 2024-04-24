@@ -6,7 +6,7 @@ import GroupsOutlinedIcon from '@mui/icons-material/GroupsOutlined';
 import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
 import { useNavigate , useParams} from 'react-router-dom';
 import './card.scss'
-const Card = ({type})=> {
+const Card = ({type, count})=> {
   let data;
   const getIdFromUrl = () => {
     const urlParts = window.location.pathname.split('/');
@@ -21,7 +21,7 @@ const Card = ({type})=> {
         link:"See details",
         icon:<PersonOutlineIcon className='icon'
         style={{color:"purple", backgroundColor:"#80008033"}}/>,
-        count:"30",
+        count:count,
         path: "/students"
       }
       break
@@ -32,8 +32,8 @@ const Card = ({type})=> {
         link:"See details",
         icon:<ListOutlinedIcon className='icon'
         style={{color:"green", backgroundColor:"#00800033"}}/>,
-        count:"30",
-        path: "/students"
+        count:count,
+        path: "/achievementsAll"
       }
       break
     case "Request":
@@ -43,7 +43,7 @@ const Card = ({type})=> {
         link:"See details",
         icon:<PersonOutlineIcon className='icon'  
         style={{color:"goldenrod", backgroundColor:"#daa52033"}}/>,
-        count:"40",
+        count:count,
 
       }
       break
@@ -54,7 +54,7 @@ const Card = ({type})=> {
         link:"See details",
         icon:<ListOutlinedIcon className='icon' 
         style={{color:"crimson", backgroundColor:"#ff000033"}}/>,
-        count:"50",
+        count:count,
         path: "/students"
       }
       break
@@ -65,7 +65,7 @@ const Card = ({type})=> {
         link:"See details",
         icon:<ListOutlinedIcon className='icon' 
         style={{color:"crimson", backgroundColor:"#ff000033"}}/>,
-        count:"50",
+        count:count,
         path: "/students"
       }
       break
@@ -76,7 +76,7 @@ const Card = ({type})=> {
         link:"See details",
         icon:<ListOutlinedIcon className='icon' 
         style={{color:"crimson", backgroundColor:"#ff000033"}}/>,
-        count:"50",
+        count:count,
         path: "/students"
       }
       break
@@ -87,7 +87,7 @@ const Card = ({type})=> {
         link:"See details",
         icon:<ListOutlinedIcon className='icon' 
         style={{color:"crimson", backgroundColor:"#ff000033"}}/>,
-        count:"50",
+        count:count,
         path: "/students"
       }
       break
@@ -98,7 +98,7 @@ const Card = ({type})=> {
         link:"See details",
         icon:<GroupsOutlinedIcon className='icon' 
         style={{color:"crimson", backgroundColor:"#ff000033"}}/>,
-        count:"25",
+        count:count,
         path: "/students"
       }
       break

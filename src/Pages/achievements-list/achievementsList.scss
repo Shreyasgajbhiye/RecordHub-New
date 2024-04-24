@@ -1,0 +1,22 @@
+.container {
+    /* Apply vertical scrollbar if content overflows */
+    padding: 20px;
+    background-color: rgb(172, 166, 166);
+
+    .subcontainer{
+        padding: 20px 30px;
+        background-color: rgb(228, 219, 219);
+        overflow-y: auto; 
+        height: 400px;
+
+
+        .list{
+            margin-bottom: 10px;
+            border-radius: 20px;
+            border: 1px solid black;
+            padding: 20px;
+            background-color: whitesmoke;
+        }
+    }
+  }
+  

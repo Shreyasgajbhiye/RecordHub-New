@@ -69,6 +69,10 @@ const router = createBrowserRouter([
     element:<Achievement/>
   },
   {
+    path:'/achievementsAll',
+    element:<Achievement/>
+  },
+  {
     path:'/achievement_form/:id',
     element:<AchievementForm/>
   },
