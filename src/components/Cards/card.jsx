@@ -129,7 +129,7 @@ const Card = ({type, count})=> {
         link:"See details",
         icon:<DescriptionOutlinedIcon className='icon' 
         style={{color:"green", backgroundColor:"#00800033"}}/>,
-        path: `/showdata/${id}`
+        path: `/getAchievements/${id}`
       }
       break
       case "Apply-Bonafide":

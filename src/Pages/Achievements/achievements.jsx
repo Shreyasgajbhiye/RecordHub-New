@@ -1,3 +1,4 @@
+// Achievement.jsx
 import React, { useState, useEffect } from 'react';
 import './achievements.scss';
 import Slidebar from '../../components/Slidebar/Slidebar2';
@@ -8,7 +9,7 @@ import AchievementsList from '../../Pages/achievements-list/achievementsList';
 
 function Achievement() {
   const navigate = useNavigate();
-  const [category, setCategory] = useState('tech'); // Default category is tech
+  const [selectedCategory, setSelectedCategory] = useState('tech'); // Default category is tech
   const [apiBaseUrl, setApiBaseUrl] = useState('https://8000/tech'); // Default base URL for tech
   const [selectedAchievementsUrl, setSelectedAchievementsUrl] = useState(null); // State to store selected achievements URL
 
@@ -20,17 +21,13 @@ function Achievement() {
     }
   }, []);
 
-  const handleCategoryChange = (event) => {
-    const selectedCategory = event.target.value;
-    setCategory(selectedCategory);
-
-    // Dynamically set base URL based on the selected category
-    const newBaseUrl = selectedCategory === 'tech' ? 'https://8000/tech' : 'https://8000/non-tech';
+  useEffect(() => {
+    const newBaseUrl = selectedCategory === 'tech' ? 'https://8000' : 'https://8000';
     setApiBaseUrl(newBaseUrl);
 
     // Log the base URL to console
     console.log("Base URL:", newBaseUrl);
-  };
+  }, [selectedCategory]);
 
   const handleCardClick = async (cardName) => {
     try {
@@ -42,7 +39,7 @@ function Achievement() {
 
       setSelectedAchievementsUrl(apiUrl); // Set selected achievements URL
 
-      const response = await axios.get(apiUrl, { // Use the dynamically set API URL
+      const response = await axios.get(apiUrl, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -61,9 +58,9 @@ function Achievement() {
         <Navbar/>
         
         <div className="container">
-          <div className='radioContainer'>
-            <input className="cont" type="radio" name="category" value="tech" checked={category === 'tech'} onChange={handleCategoryChange} /> TECH
-            <input type="radio" className="cont"  name="category" value="nontech" checked={category === 'nontech'} onChange={handleCategoryChange} /> NON-TECH
+          <div className='categoryContainer'>
+            <button className={`categoryButton ${selectedCategory === 'tech' ? 'active' : ''}`} onClick={() => setSelectedCategory('tech')}>TECH</button>
+            <button className={`categoryButton ${selectedCategory === 'nontech' ? 'active' : ''}`} onClick={() => setSelectedCategory('nontech')}>NON-TECH</button>
           </div>
 
           <div className="flex">
@@ -81,7 +78,7 @@ function Achievement() {
             </div>
           </div>
         </div>
-      {selectedAchievementsUrl && <AchievementsList apiUrl={selectedAchievementsUrl} />} {/* Render AchievementsList component */}
+        {selectedAchievementsUrl && <AchievementsList apiUrl={selectedAchievementsUrl} category={selectedCategory} />}
       </div>
     </div>
   );

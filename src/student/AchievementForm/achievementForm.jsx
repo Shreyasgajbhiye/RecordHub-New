@@ -1,32 +1,65 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import './achievementForm.css';
 import Navbar from '../../../src/components/Navbar/navbar';
 import Slidebar from '../../components/Slidebar/Slidebar2';
-
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 function AchievementForm() {
-
   const credentials = {
-    email: "",
-    techorntech: "",
-    achievement_type: "",
     name: "",
-    phone: "",
-    year: "",
-    batch: "",
-    gender_option: ""
+    desc: "",
+    type: "",
+    year: "", // New: to store the selected year
+    pdf: "", // New: to store the PDF file
+    file: ""
   };
 
+  const navigate = useNavigate(); 
+
   const [credential, setCredentials] = useState(credentials);
+  const [pdfFile, setPdfFile] = useState(null); // New: to store the PDF file
 
   const inputHandler = (e) => {
     const { name, value } = e.target;
     setCredentials({ ...credential, [name]: value });
   };
 
-  useEffect(() => {
-    console.log(credential);
-  }, [credential]); // Log the updated credential whenever it changes
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    setCredentials({ ...credential, pdf: file }); // New: Store the file in credential state
+  };
+
+  const handleYearChange = (e) => {
+    const year = e.target.value;
+    setCredentials({ ...credential, year }); // New: Store the selected year in credential state
+  };
+
+  const submitForm = async (e) => {
+    e.preventDefault();
+    // Assuming you have an API endpoint for uploading PDF files
+    try {
+      const token = localStorage.getItem('token'); // Retrieve token from localStorage
+      const headers = {
+        'Authorization': `Bearer ${token}`, // Assuming your API expects a Bearer token
+      };
+
+      const formData = new FormData();
+      formData.append("name", credential.name);
+      formData.append("desc", credential.desc);
+      formData.append("type", credential.type);
+      formData.append("year", credential.year);
+      formData.append("pdf", credential.pdf); // Append the PDF file to the form data
+
+      const response = await axios.post("http://localhost:8000/api/Student/uploadAchievement", formData, { headers });
+      console.log("File uploaded successfully", response);
+      toast('Posted succesfully', { position: "top-right" })
+      const id = response.data.id;
+      navigate.push(`/home/${id}`);
+    } catch (error) {
+      console.error("Error uploading file", error);
+    }
+  };
 
   return (
     <div className='home'>
@@ -35,84 +68,60 @@ function AchievementForm() {
         <div className='homeContainer'>
           <Navbar />
           <div className="Box">
-            <section class="container">
+            <section className="container">
               <header className='hd'>Post About Your Achievement</header>
-              <form action="#" class="form" >
-                <div class="input-box">
-                  <label>Full Name</label>
-                  <input type="text" placeholder="Enter full name" name='name' onChange={inputHandler} required />
+              <form onSubmit={submitForm} className="form">
+                <div className="input-box">
+                  <label>Achievement Name</label>
+                  <input type="text" placeholder="Enter Achievement name" name='name' onChange={inputHandler} required />
                 </div>
-                <div class="input-box">
-                  <label>Email Address</label>
-                  <input type="text" placeholder="Enter email address" name='email' onChange={inputHandler} required />
+                <div className="input-box">
+                  <label>Description</label>
+                  <input type="text" placeholder="Enter Description" name='desc' onChange={inputHandler} required />
                 </div>
-                <div class="column">
-                  <div class="input-box">
-                    <label>Phone Number</label>
-                    <input type="number" placeholder="Enter phone number" name='phone' onChange={inputHandler} required />
-                  </div>
-                </div>
-                <div className="column">
-                  <div className="input-box">
-                    <label htmlFor="">Year [FE,SE,BE,TE]</label>
-                    <input type="text" name='year' onChange={inputHandler} />
-                  </div>
-                  <div className="input-box">
-                    <label htmlFor="">Batch</label>
-                    <input type="text" name='batch' onChange={inputHandler} />
-                  </div>
-                </div>
-                <div class="gender-box">
-                  <h3>Gender</h3>
-                  <div class="gender-option" >
+                <div className="gender-box">
+                  <h3>Enter the Year</h3>
                   <div className="gender-option">
-                  <div className="gender">
-                    <input type="radio" id="check-male" name="gender_option" value="male" checked={credential.gender_option === 'male'} onChange={inputHandler} />
-                    <label htmlFor="check-male">Male</label>
-                  </div>
-                  <div className="gender">
-                    <input type="radio" id="check-female" name="gender_option" value="female" checked={credential.gender_option === 'female'} onChange={inputHandler} />
-                    <label htmlFor="check-female">Female</label>
-                  </div>
-                  <div className="gender">
-                    <input type="radio" id="check-other" name="gender_option" value="prefer_not_to_say" checked={credential.gender_option === 'prefer_not_to_say'} onChange={inputHandler} />
-                    <label htmlFor="check-other">Prefer not to say</label>
-                  </div>
-                </div>
-                  </div>
-                </div>
-                <div class="input-box address">
-                  <label>Achievement Details</label>
-                  <div class="column">
-                    <div className="select-box">
-                      <select name="techorntech" id="techorntech" onChange={inputHandler}>
-                        <option hidden>Tech or Non-Tech</option>
-                        <option value="tech" >Tech</option>
-                        <option value="non-tech">Non-Tech</option>
-                      </select>
+                    <div className="gender">
+                      <input type="radio" id="FE" name="year" value="FE" onChange={handleYearChange} />
+                      <label htmlFor="FE">FE</label>
                     </div>
-                    <div className="select-box">
-                      <select name="achievement_type" id="achievement-type" onChange={inputHandler}>
-                        <option hidden>Type of Achievement</option>
-                        <option value="sport" >sport</option>
-                        <option value="hackathon">hackathon</option>
-                        <option value="Debate">Debate</option>
-                        <option value="Arts">Arts</option>
-                      </select>
+                    <div className="gender">
+                      <input type="radio" id="SE" name="year" value="SE" onChange={handleYearChange} />
+                      <label htmlFor="SE">SE</label>
+                    </div>
+                    <div className="gender">
+                      <input type="radio" id="TE" name="year" value="TE" onChange={handleYearChange} />
+                      <label htmlFor="TE">TE</label>
+                    </div>
+                    <div className="gender">
+                      <input type="radio" id="BE" name="year" value="BE" onChange={handleYearChange} />
+                      <label htmlFor="BE">BE</label>
                     </div>
                   </div>
-                  <div className="column">
-                    <input type="file" />
+                </div>
+                <div className="input-box address">
+                  <label>Achievement Type</label>
+                  <div className="select-box">
+                    <select name="type" id="type" onChange={inputHandler}>
+                      <option hidden>Tech or Non-Tech</option>
+                      <option value="tech">Tech</option>
+                      <option value="non-tech">Non-Tech</option>
+                    </select>
                   </div>
                 </div>
-                <button>Submit</button>
+                <div className="input-box">
+                  <label>Upload PDF</label>
+                  <input type="file" accept=".jpg , .jpeg , .png , .pdf" onChange={handleFileChange} required />
+                </div>
+                <button type="submit">Submit</button>
               </form>
             </section>
           </div>
         </div>
       </>
     </div>
-  )
+  );
 }
 
 export default AchievementForm;
