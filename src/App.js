@@ -19,6 +19,7 @@ import GetMentor from "./admin/get_all_mentor/get_mentor.jsx";
 import AddMentor from "./admin/add_mentor/add_mentor.jsx";
 import AchievementSingle from "./Pages/achievementSingle/achievementSingle.jsx";
 import GetAchievements from "./student/getAchievements/getAchievements.jsx";
+import AchievementsList from "./Pages/achievements-list/achievementsList.jsx";
 const router = createBrowserRouter([
   {
     path:'/',
@@ -71,12 +72,16 @@ const router = createBrowserRouter([
     element:<Achievement/>
   },
   {
+    path:'/achievementList',
+    element:<AchievementsList/>
+  },
+  {
     path:'/achievementsAll',
     element:<Achievement/>
   },
   {
     path:'/AchievementSingle/:id',
-    element:<AchievementSingle/>
+    element:<Achievement/>
   },
   {
     path:'/achievement_form/:id',

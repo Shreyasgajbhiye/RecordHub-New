@@ -33,7 +33,7 @@ const Card = ({type, count})=> {
         icon:<ListOutlinedIcon className='icon'
         style={{color:"green", backgroundColor:"#00800033"}}/>,
         count:count,
-        path: "/achievementsAll"
+        path: "/achievementList"
       }
       break
     case "Request":
