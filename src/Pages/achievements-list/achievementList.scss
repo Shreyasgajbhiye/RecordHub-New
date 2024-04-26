@@ -2,11 +2,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 20px; // Add padding at the top
 
     .students-cards {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         grid-gap: 20px;
 
         .student-card {
@@ -14,7 +13,6 @@
             border-radius: 10px;
             padding: 20px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            width: 100%; // Set width to 100% to avoid overflow issues
 
             h3 {
                 margin-bottom: 10px;
@@ -28,20 +26,26 @@
 
             .student-actions {
                 display: flex;
-                justify-content: flex-end; // Align button to right
+                justify-content: space-between;
 
-                a {
+                button, a {
                     padding: 8px 16px;
                     border: none;
                     border-radius: 5px;
                     cursor: pointer;
                     text-decoration: none;
                     color: white;
-                    background-color: #4db8ff;
-                    margin-left: 10px; // Add margin between buttons
                 }
 
-                a:hover {
+                button {
+                    background-color: #ff4d4d;
+                }
+
+                a {
+                    background-color: #4db8ff;
+                }
+
+                button:hover, a:hover {
                     opacity: 0.8;
                 }
             }
