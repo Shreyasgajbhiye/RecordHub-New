@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import data from './data.json';
-import './achievementsList.scss'
+import './achievementsList.scss';
 
-function AchievementsList({ apiUrl }) {
+function AchievementsList({ apiUrl, category }) {
   const [jsonData, setJsonData] = useState([]);
 
   useEffect(() => {
-    // Set data from data.json file
+    // Simulating fetching data from data.json
+    // In a real application, you would fetch data from an API
     setJsonData(data);
   }, []);
 
@@ -14,24 +16,27 @@ function AchievementsList({ apiUrl }) {
     <div className='container'>
       <h2>Achievements List</h2>
       <p>API URL: {apiUrl}</p>
+      <p>Category: {category}</p>
       <div className="subcontainer">
-      <ul>
-        {jsonData.map((item, index) => (
-          <li key={index}>
-            <div className="list">
-            <div>
-              <strong>First Name:</strong> {item.fname}
-            </div>
-            <div>
-              <strong>Last Name:</strong> {item.lname}
-            </div>
-            <div>
-              <strong>Email:</strong> {item.email}
-            </div>
-            </div>
-          </li>
-        ))}
-      </ul>
+        <ul>
+          {jsonData.map((item, index) => (
+            <li key={index}>
+              <Link to={{ pathname: `/achievementSingle/${item._id}`, state: { apiUrl } }} className="list-item-link">
+                <div className="list">
+                  <div>
+                    <strong>First Name:</strong> {item.firstName}
+                  </div>
+                  <div>
+                    <strong>Last Name:</strong> {item.lastName}
+                  </div>
+                  <div>
+                    <strong>Email:</strong> {item.email}
+                  </div>
+                </div>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
