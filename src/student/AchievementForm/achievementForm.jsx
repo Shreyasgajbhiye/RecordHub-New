@@ -55,7 +55,7 @@ function AchievementForm() {
       console.log("File uploaded successfully", response);
       toast('Posted succesfully', { position: "top-right" })
       const id = response.data.id;
-      navigate.push(`/home/${id}`);
+      navigate.push(`/student/${id}`);
     } catch (error) {
       console.error("Error uploading file", error);
     }

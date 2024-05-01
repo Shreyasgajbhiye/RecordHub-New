@@ -78,6 +78,25 @@ import toast from 'react-hot-toast';
           console.error('Error approving student:', error);
         });
     };
+
+
+    const handleDeclineClick = (studentId) => {
+      const token = localStorage.getItem('token');
+  
+      fetch(`http://localhost:8000/api/Mentor/delete/${studentId}`, {
+        method: 'DELETE',
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((response) => {
+        console.log(response);
+        toast.error(`Student Declined`, { position: "top-right" });
+      })
+      .catch(error => {
+        console.error('Error declining student:', error);
+      });
+    };
   
     const actionColumn = [
       {
@@ -92,7 +111,7 @@ import toast from 'react-hot-toast';
               ) : (
                 <React.Fragment>
                   <div className="approveButton" onClick={() => handleApproveClick(params.row._id)}>Approve</div>
-                  <div className="declineButton">Decline</div>
+                  <div className="declineButton" onClick={() => handleDeclineClick(params.row._id)}>Decline</div>
                 </React.Fragment>
               )}
               <div className="deleteButton">Delete</div>

@@ -11,6 +11,7 @@ import axios from 'axios';
 function Home() {
   const navigate = useNavigate();
   const [studentsCount, setStudentsCount] = useState("0");
+  const [AchievementCount, setAchievementCount] = useState("0");
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -19,8 +20,9 @@ function Home() {
       navigate('/unauth');
     } else {
       fetchStudentsCount(token);
+      fetchAchievementCount(token)
     }
-  }, [studentsCount]);
+  }, [studentsCount,AchievementCount]);
 
   const fetchStudentsCount = (token) => {
     axios.get('http://localhost:8000/api/Mentor/getAllStudents', {
@@ -38,6 +40,22 @@ function Home() {
     });
   };
 
+  const fetchAchievementCount = (token) => {
+    axios.get('http://localhost:8000/api/Mentor/getAllAchievements', {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    })
+    .then(response => {
+      console.log(response)
+      console.log(response.data.length)
+      setAchievementCount(String(response.data.length));
+    })
+    .catch(error => {
+      console.error('Error fetching students count:', error);
+    });
+  };
+
   return (
     <div className='home'>
       <>
@@ -46,7 +64,7 @@ function Home() {
           <Navbar/>
           <div className='cards'> 
               <Card type="Students" count={studentsCount}/>
-              <Card type="Achievement" count="30"/>
+              <Card type="Achievement" count={AchievementCount}/>
               {/* <Card type="Request" count="30"/> */}
               <Card type="Waiting" count="00"/>
           </div>
