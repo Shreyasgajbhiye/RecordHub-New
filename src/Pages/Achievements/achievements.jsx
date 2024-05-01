@@ -90,8 +90,9 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import Navbar from '../../components/Navbar/navbar';
 import Slidebar from '../../components/Slidebar/Slidebar2';
-import img from '../../assests/6329.jpg'
-const Achievement = ({id}) => {
+import img from '../../assests/6329.jpg';
+
+const Achievement = () => {
   const [achievements, setAchievements] = useState([]);
   const [loading, setLoading] = useState(true); // Add loading state
 
@@ -118,6 +119,7 @@ const Achievement = ({id}) => {
         );
         console.log(response.data)
         setAchievements(response.data);
+        setLoading(false); // Set loading to false after fetching data
       } catch (error) {
         console.error('Error fetching achievements:', error);
       }
@@ -127,25 +129,31 @@ const Achievement = ({id}) => {
   }, [params]);
 
   const baseUrl = 'http://localhost:8000/';
+
   return (
     <div className='home'>
       <>
         <Slidebar />
         <div className='homeContainer'>
           <Navbar />
-          
-            <div style={{ display: 'flex', flexWrap: 'wrap', backgroundColor: 'white', marginBottom: '10px ', paddingBottom: "10px" }}>
-              {achievements.map((achievement, index) => (
+          <div style={{ display: 'flex', flexWrap: 'wrap', backgroundColor: 'white', marginBottom: '10px ', paddingBottom: "10px" }}>
+            {loading ? (
+              <p>Loading...</p>
+            ) : achievements.length === 0 || achievements === "" ? (
+              <p>No record found</p>
+            ) : (
+              achievements.map((achievement, index) => (
                 <div key={index} style={{ margin: '10px', width: '200px', height: '250px', border: '1px solid #ccc', borderRadius: '5px', padding: '10px', textAlign: 'center' }}>
                   <h3>{achievement.name}</h3>
-
                   {/* Image */}
                   <img src={img} alt="Achievement" style={{ maxWidth: '100%', maxHeight: '100%' }} />
-                  <a style={{ paddingBottom: "10px" }} href={`http://localhost:8000/${achievement.pdf}`} target="_blank" rel="noopener noreferrer">View PDF</a>
+                  {achievement.pdf && (
+                    <a style={{ paddingBottom: "10px" }} href={`http://localhost:8000/${achievement.pdf}`} target="_blank" rel="noopener noreferrer">View PDF</a>
+                  )}
                 </div>
-              ))}
-            </div>
-          
+              ))
+            )}
+          </div>
         </div>
       </>
     </div>

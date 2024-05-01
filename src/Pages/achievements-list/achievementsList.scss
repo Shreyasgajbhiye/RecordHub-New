@@ -1,11 +1,12 @@
 .students-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 10px 30px;
+    // justify-content: center;
+    // align-items: center;
     padding-top: 20px; // Add padding at the top
 
     .students-cards {
-        display: grid;
+        display: flex;
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
         grid-gap: 20px;
 

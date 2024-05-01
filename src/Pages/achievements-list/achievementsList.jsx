@@ -114,7 +114,8 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import './achievementsList.scss'; // Import your SCSS file for styling
-
+import Navbar from "../../components/Navbar/navbar";
+import Slidebar from "../../components/Slidebar/Slidebar2";
 const AchievementsList = () => {
     const navigate = useNavigate();
     const [students, setStudents] = useState([]);
@@ -128,7 +129,7 @@ const AchievementsList = () => {
                 return;
             }
             try {
-                const response = await axios.get("http://localhost:8000/api/Mentor/getAllStudents", {
+                const response = await axios.get("http://localhost:8000/api/Mentor/getAllAchievements", {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
@@ -147,6 +148,12 @@ const AchievementsList = () => {
     };
 
     return (
+        <div className='home'>
+      <>
+        <Slidebar/>
+        <div className='homeContainer'>
+          <Navbar/>
+          
         <div className="students-container">
             <div className="students-cards">
                 {students.map((student, index) => (
@@ -160,6 +167,9 @@ const AchievementsList = () => {
                 ))}
             </div>
         </div>
+        </div>
+      </>
+    </div>
     )
 }
 
